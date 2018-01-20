@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="exception" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="mappingExceptionResolver" class="MappingExceptionResolver.MappingExceptionResolver"></interceptor>
+		</interceptors>
+
+		<action name="exceptionProvider" class="com.cloudcc.action。ExceptionProviderAction">
+			<result>/index.jsp</result>
+			<interceptor-ref name="mappingExceptionResolver"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+	</package>
+
+
+</struts>
